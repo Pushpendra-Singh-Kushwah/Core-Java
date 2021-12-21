@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> for loop</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//  applying for loop 	
+		for (var i = 100; i <= 200; i++) {
+			if (i%5==0) {
+                        document.write("<h5>" + i + "</h5>");
+			}
+		}
+
+		// applying while loop
+		var a =10;
+		while(a>0){
+			document.write(" " + a);
+			a--;
+		}
+
+		// apllying do while loop
+
+		var b = 5;
+		var c = 10;
+
+		do {
+			document.write("in this loop condition is cheacked in the last")
+		} while (a>b)
+
+		// apllying while loop 2nd example
+        
+		var d = 6;
+		var ballInOver = true;
+
+		while (ballInOver) {
+				document.write("  ball no. :   " + d) 
+				d--;
+			if (d<=0) {
+				document.write("that is end of over")
+				alive=false;
+			}
+		}
+		
+		
+
+	</script>
+
+</body>
+</html

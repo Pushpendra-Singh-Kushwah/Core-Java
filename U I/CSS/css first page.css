@@ -1,0 +1,35 @@
+p {
+
+color : green;
+font family : sans-serif;
+font-style: black;
+		 
+
+}
+
+h1{
+	color : black;
+	border: 10px double blue;
+	text-align: center;
+	font-size: 40px;
+	font-style: normal;
+	text-shadow: 20px 50 px 10px aliceblue;
+
+}
+
+div {
+	color: blues;
+	background color: light orangered;
+
+	}
+body{
+	background-color: rgb(100, 20, 40);
+	background-image: url("al.jpg"), url("feature-image-v1-1.jpg");
+	background-size: 50%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: left, right;
+	margin-right: 500px;
+	margin-left: 200px;
+	
+
+}

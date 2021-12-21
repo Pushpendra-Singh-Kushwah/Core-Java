@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<title>Form Validation</title>
+	<script type="text/javascript">
+		function validate(frm){
+			flag=true;
+			if (frm.name.value=='') {
+				// alert (pls provide user name);
+				document.getElementById("i1").innerHTML="plz provide user name"
+				flag=false;
+			}if (frm.pwd.value=='') {
+				// alert (pls provide password)
+				document.getElementById("i1").innerHTML="plz provide password"
+				flag=false;
+			}
+			return flag;
+		}
+	</script>
+	<style type="text/css">
+		span {
+			color: orange;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<h1 class="text-secondary">Validation in JS</h1>
+
+	<form action="Function.html" onsubmit="validate(this)">
+		<input type="text" name="name" placeholder="Enter your name here">
+		<input type="password" name="pwd" placeholder="Enter your password here">
+		<input type="submit"  name="" value="Submit">
+	</form>
+<hr style="height: 2px; background-color: orange;">
+       
+       <!--type 2 form-->
+
+	<h1 class="text-primary"> second type in form</h1>
+	<form action="Function.html" onsubmit="return validate(this)">
+	<div class="form-group"> 
+		<input class="form-control" type="text" name="name" placeholder="Enter your name here">
+		<input class="form-control" type="password" name="pwd" placeholder="Enter your password here">
+	</div>
+		<input class="btn btn-danger" type="submit"  name="" value="Submit">
+	</form>
+
+	<!--type 3 form (fucntion create in script box for that)-->
+
+	<h1 class="text-success"> third type in form</h1>
+	<form action="Function.html" onsubmit="return validate(this)">
+	<div class="form-group">
+		<span id="i1"></span> 
+		<input class="form-control" type="text" name="name" placeholder="your name here" value="">
+		<span id="i2"></span>
+		<input class="form-control" type="password" name="pwd" placeholder="your pwd here" value="">
+	</div>
+		<input class="btn btn-danger" type="submit"  name="" value="Submit">
+	</form>
+	</div>
+
+</body>
+</html>

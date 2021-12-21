@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>if</title>
+	
+	<script type="text/javascript">
+		function buyPizza(dominos){
+			b=parseInt(dominos.budget.value)
+		
+			if(b>=1000){
+				document.getElementById('demo').innerHTML="<h1> order pizza... </h1>"
+			}else {
+				document.getElementById('demo').innerHTML = "<h1> u cant...</h1>" 
+			}
+			return false;
+		}
+	</script>
+	
+</head>
+<body>	
+	<h1>Buy Pizza here</h1>
+	<span id="demo"> <h3> order value check first</h3></span>
+	<form action="" onsubmit="return buyPizza(this)">
+		<input type="text" name="budget" placeholder="Enter your Amount" >
+		<input type="submit"  value="Submit" >
+		
+	</form>
+</body>
+</html>

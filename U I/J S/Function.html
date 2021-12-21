@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Function in JS</title>
+	<script type="text/javascript">
+
+		
+		function helloJava(){
+			document.getElementById('demo').innerHTML="I am Pushpendra Singh Kushwah";
+		}
+
+		function firstInput(name){
+			document.write("this is first input on click " + name);
+		}
+
+	</script>
+	<script type="text/javascript" src="scripts.js"></script> <!--customize java script-->
+</head> 
+<body>
+	
+	<h1>Demo of function</h1>
+	<!--paragraph call method in a single line way-->
+	<p onmouseover="changeColor()" id="demo">This is the message for change</p>
+	<!-- this call on click-->
+	<p id="demo"> info about me</p>
+	<button onclick="helloJava()">click</button>
+	<button onclick="firstInput('Gauri Rajawat')">click for change</button>
+	<button ondblclick="aboutMe()">double click</button>
+
+</body>
+</html>

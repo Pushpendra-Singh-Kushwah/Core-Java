@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--on event write script in head-->
+	<title>First in JS</title>
+</head>
+<body>
+	<h1> First Java Script coding</h1>
+	<!--on page load write script in body-->
+
+	<p id="change">This is a line</p> <!--this line will be tested later in script-->
+	<script type="text/javascript">
+
+			console.log("hello! ..... have a good day"); // print on console
+
+			document.write("<h3> Hello everyone </h3>"); // print on page
+
+			window.alert("what are you doing.... click on ok ... have a good day"); // it produce a alert message
+
+			vv=confirm(" is that print on console or not"); // it have confirm so it will ask for ok(true) or cancel(false) 													and then print on console 
+			console.log(vv);
+
+			name=prompt("Enter name", "Pushpendra Singh Kushwah"); // it will show on prompt. ok will print name on console
+			console.log(name);
+
+			// to over write a single element
+			document.getElementById("change").innerHTML="line written in element p id = change will be change"
+			
+	</script>
+</body>
+</html>
