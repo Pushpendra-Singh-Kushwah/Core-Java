@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exception Handling</title>
+</head>
+<body>
+	<h1>Exception Handling</h1>
+<script type="text/javascript">
+	
+	var a=10;
+	try{
+		document.write("<h1>" + a + "</h1>");
+		document.write("<h1>" + b + "</h1>");
+	}catch(e){
+		document.write("<br>"+e); 			// o/p :- is ReferenceError: b is not defined 
+		document.write("<br>"+ e.name); 	// o/p :- is ReferenceError
+		document.write("<br>"+ e.message); 	// o/p :- b is not defined 
+	}
+
+</script>
+</body>
+</html>

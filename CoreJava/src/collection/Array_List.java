@@ -1,0 +1,44 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Array_List {
+	public static void main(String[] args) {
+		
+		List a = new ArrayList();
+		a.add("one");
+		a.add(2);
+		a.add('p');
+		a.add(3.5);
+		System.out.println(a);
+		
+		List b = new ArrayList();
+		b.add("seven");
+		b.add(20);
+		b.add('s');
+		b.add(5.3);
+		System.out.println(b);
+		
+		a.addAll(b);
+		System.out.println("Collection b is added in a : " + a);
+		
+		System.out.println(a.contains("seven"));
+		System.out.println(a.containsAll(b));
+		System.out.println(a.isEmpty());
+		System.out.println(a.retainAll(b)); // if b's all element in a then "true" else "false";
+		System.out.println(a.size());
+		
+		
+	
+		
+		
+		/*Integer i = new Integer(10);
+		a.add(i);
+		
+		Integer val = (Integer) a.get(3);
+		System.out.println(val);*/
+		
+	}
+
+}

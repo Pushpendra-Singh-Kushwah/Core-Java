@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rectangel</title>
+</head>
+<body>
+	<h1 style="color : blue;">class with constructor</h1>
+	<script type="text/javascript">
+		
+		var r = class Rectangle{
+			
+			constructor(length, width){
+				this.length=length;
+				this.width=width;
+			}
+
+			getLength(){
+				return this.length;
+			}
+
+			getWidth(){
+				return this.width;
+			}
+
+			area(){
+				return this.length * this.width;
+			}
+		}
+
+			rectangle = new r(10,50);
+
+		 document.write("<h1> rectangle width is : " + rectangle.getWidth() + "</h1>");
+		 document.write("<h1> rectangle length is : " + rectangle.getLength() + "<h1>");
+		  document.write("<h1> rectangle area is : " + rectangle.area() + "<h1>");
+	</script>
+</body>
+</html>

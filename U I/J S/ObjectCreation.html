@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Object Creation in JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("<h1>---------------Object Literal-----------------------</h1>");
+		var emp = {id : 2021, fname : 'Pushpendra', salary : 100000};
+		//emp.fname = "PR";  // this will rename the name 
+		//delete emp.fname;	// this will delete the fname literal, then literal is "undefined"
+		var shape = {color : "yellow", borderWidth : 10};
+		document.write("<h1>Id:" + emp.id + "</h1>");
+		document.write("<h1>Id:" + emp.fname+ "<br>" + emp.salary + "</h1>");
+		document.write("<h1>Id:" + shape.color + "</h1>");  // type 1 call values literal
+		document.write("<h1>Id:" + shape["color"] + "</h1>");	// type 2 call values literal
+
+		document.write("<h1>---------------Object Constructor-----------------------</h1>");
+		function circle(radius){
+			this.radius = radius;
+		}
+		cir = new circle(2);
+		document.write("<h1>Id:" + cir.radius + "</h1>");
+
+		document.write("<h1>---------------Object Class Constructor-----------------------</h1>");
+		var emp = new Object();
+		emp.id=1;
+		emp.name = "P S K";
+		emp.salary = 120000;
+		document.write("<h1>Id:" + emp.id+ "<br>" + emp.salary +"<br>" + emp.name + "</h1>");
+
+	</script>
+
+</body>
+</html>

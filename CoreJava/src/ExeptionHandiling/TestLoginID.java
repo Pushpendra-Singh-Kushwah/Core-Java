@@ -14,8 +14,8 @@ public class TestLoginID {
 			System.out.println("login successful");
 
 		} else {
-			LoginExeption z = new LoginExeption("error in Login ...plz try again");
-			throw z;
+			LoginExeption e = new LoginExeption("error in Login ...plz try again");
+			throw e;
 		}
 
 	}

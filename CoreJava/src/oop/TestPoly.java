@@ -23,5 +23,6 @@ public class TestPoly {
 		double combinedArea = calArea(abc);
 		System.out.println("The final area of all shapes is : " + combinedArea);
 
+		//System.out.println(calArea(abc));
 	}
 }                                                                                             

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Class Expression</title>
+</head>
+<body>
+	<script type="text/javascript">
+			var s =class Shape{
+			
+			constructor(c,bw){
+				// instance variable
+				this.color=c;
+				this.borderWidth=bw;
+			}
+			
+			getColor(){
+				return this.color;
+			}
+
+			getBorderWidth(){
+				return this.borderWidth
+			}
+		}
+			shape = new s("yellow", 20);
+			document.write("<h1>" + shape.getBorderWidth() + "</h1>");
+			document.write("<h1>" + shape.getColor() + "</h1>");
+			
+
+	</script>
+
+</body>
+</html>

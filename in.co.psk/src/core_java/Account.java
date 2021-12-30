@@ -39,8 +39,30 @@ public class Account {
 		child.setBalance(child.getBalance()+deposit);
 
 	}
-	public void withdrawal(double withdrwl, Account child) {
-		child.setBalance(child.getBalance()-withdrwl);
-
+	public void withdrawal(int amt, Account object) throws Exception {
+		object.setBalance(object.getBalance()-amt);
+		System.out.println(object.getBalance());
+		
+		if(object.getBalance()>2000000) {
+			 System.out.println("Withdrawal is Possible");
+		 }
+		else {
+			 Exception e = new Exception("Insufficient fund");
+			 throw e;
+		 }
+	}
+		public void withdrawal2(int amt, Account a) {
+			//object.setBalance(object.getBalance()-amt);
+			//System.out.println(a.getBalance());
+			try {
+				if ((a.getBalance()-amt) < 500) {
+					System.err.println("withdrawal failed due to insufficient fund i.e>500");
+					a.setBalance(a.getBalance());
+				}else {
+					a.setBalance(a.getBalance()-amt);
+				}
+			}catch(Exception E) {
+				System.out.println(E.getMessage());
+			}
 	}
 }

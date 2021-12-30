@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>timer start_stop</title>
+	<script type="text/javascript">
+			
+			var f =0;
+		
+		function startsTimer(){ // start timer
+			if(f>0){
+				return;
+			}
+			var d=new Date()
+			document.getElementById("demo").innerHTML=d.toLocaleString();
+			z=setInterval(startsTimer,1000); // one second
+		}
+		
+		function stopsTimer(){  // stop timer
+			clearInterval(z);
+			document.getElementById("demo").innerHTML="end of clock";
+			f=1;  // this statement given bcoz startsTimer iterate and to stop that we give f=1, 		so the condition become false and it return;
+		}
+	</script>
+</head>
+<body>
+	<h1> time is : </h1>
+	<h1 id="demo">hiii</h1>
+	<button onclick="startsTimer()">start time</button>
+	<button onclick="stopsTimer()">end time</button>
+</body>
+</html>

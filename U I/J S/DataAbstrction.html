@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Data Abstraction</title>
+</head>
+<body>
+		<h3 style="text-align: center;">Abstract class example</h3>
+<script type="text/javascript">
+		class Shape{
+			constructor(len,wid){
+				this.length=len;
+				this.width=wid;
+				if (this.constructor==Shape) {
+					throw new Error ("Abstract class cant be instantiated");
+				}
+			}
+			area(){
+					throw new Error ("Abstract method doesnt have any logic");
+			}
+		}
+		//var shape = new Shape(10,8); // not possible b'coz abstract class cant have object;
+
+		class Circle extends Shape{
+			constructor(len,wid,trizya){
+				super(len,wid);
+				this.radius=trizya;
+			}
+			area(){
+				return Math.PI*this.radius*this.radius;
+			}
+		}
+		var circle = new Circle(10,5,10);
+		document.write("<h1> Area of circle is :  " + circle.area() + "</h1>");
+</script>
+</body>
+</html>

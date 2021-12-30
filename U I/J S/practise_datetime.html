@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>timer start_stop</title>
+	<script type="text/javascript">
+			
+			var f =0;
+		
+		function startsTimer(){ // start timer
+			
+			var d=new Date()
+			document.getElementById("demo").innerHTML=d.toLocaleString();
+			z=setInterval(startsTimer,1000); // one second
+		}
+		
+		function stopsTimer(){  // stop timer
+			clearInterval(z);
+			document.getElementById("demo").innerHTML="end of clock";
+			
+		}
+	</script>
+</head>
+<body>
+	<h1> time is : </h1>
+	<h1 id="demo">hiii</h1>
+	<button onclick="startsTimer()">start time</button>
+	<button onclick="stopsTimer()">end time</button>
+</body>
+</html>

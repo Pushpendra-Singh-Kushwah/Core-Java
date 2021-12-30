@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Date and time</title>
+</head>
+<body>
+	<h1>Date and Time</h1>
+	<script type="text/javascript">
+		
+		var d = new Date();
+
+		document.write("<h3>");
+		document.write("<br>" + d);
+		document.write("<br>" + d.getYear());
+		document.write("<br>" + d.getMonth());
+		document.write("<br>" + d.getDay());
+		document.write("<br>" + d.getDate());
+		document.write("<br>" + d.getHours());
+		document.write("<br>" + d.getMinutes());
+		document.write("<br>" + d.getSeconds());
+		document.write("<br>" + d.getTime());
+		document.write("<br>" + d.toUTCString());
+		document.write("<br>" + d.toDateString());
+		document.write("</h3>");
+		
+
+		document.write("<h4>");
+		var s1 = "02 Dec 2021"; // in that case only date show and time will be 00;00;00;
+		var s2 = "11:40:31"; // this is not valid format.....
+		var s3 = "02 Dec 2021; 11:40:31"; // in that case both date and time will show
+		var md1= new Date(s1);
+		var md2= new Date(s2);
+		var md3= new Date(s3);
+
+		document.write("<br> Date will print in normal formate:   " + d.toLocaleString());
+		document.write("<br>"+ md1);
+		document.write("<br>"+ md2);
+		document.write("<br>"+ md3);
+
+		document.write("</h4>");
+
+	</script>
+
+</body>
+</html>

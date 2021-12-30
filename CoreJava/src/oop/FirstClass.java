@@ -17,10 +17,10 @@ public class FirstClass extends Student {
 	}
 	
 	
-	@Override
+	/*@Override
 	public int getFees() {
 		
 		return super.getFees();
-	}
+	}*/
 
 }

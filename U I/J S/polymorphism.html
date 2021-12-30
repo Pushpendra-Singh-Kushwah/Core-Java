@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolyMorphism</title>
+</head>
+<body>
+  <h1>PolyMorphism Over riding, over loading</h1>
+  <script type="text/javascript">
+    class Shape{
+      constructor(){}
+      area(){
+        document.write("<h1>  area in nothing </h1>");
+      }
+    }
+   
+    class Rectangle extends Shape{
+      constructor(l,w){
+        super();
+        this.length=l;
+        this.width=w;
+      }
+
+      area(){
+        return this.length * this.width;
+      }
+}
+var rect = new Rectangle(15,10);
+      document.write("<h1> area of Rectangle is : " + rect.area() + "</h1>");
+  </script>
+</body>
+</html>

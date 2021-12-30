@@ -8,9 +8,9 @@ public SecondClass() {}
 		this.fees = fees;
 	}
 	
-	@Override
+	/*@Override
 	public int getFees() {
 		
 		return super.getFees();
-	}
+	}*/
 }

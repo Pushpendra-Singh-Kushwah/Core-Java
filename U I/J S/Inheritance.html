@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inheritance</title>
+</head>
+<body>
+	<h1>Inheritance in JS</h1>
+	<script type="text/javascript">
+		class Shape{
+			constructor(l, w){
+				this.length=l;
+				this.borderWidth=w;
+			}
+			details(){
+				return "we cant define shapes area";
+			}
+		}
+		//var shape=new Shape(10,5);
+		//document.write("<h1> the answer is : " + shape.details() + "</h1>");
+
+		class Triangle extends Shape{
+			constructor(l,w,h){
+				super(l,w);
+				this.half=h;
+			}
+			setLenWid(len,wid){
+				this.length=len;
+				this.borderWidth=wid;
+			}
+			getLenWid(){
+				document.write("<h1>" + this.length*this.borderWidth + "</h1>")
+			}
+			area(){
+				return (this.length * this.borderWidth * this.half);
+			}
+		}
+		var triangle = new Triangle(10,5,0.5);
+		document.write("<h1> The Area of Triagle is : " + triangle.area() + "</h1>");
+		document.write("<h1> using super key word, constructor calling constructor</h1>");
+
+		document.write("<h1>------------------------------------------------------------");
+
+		triangle.setLenWid(6,4);
+		triangle.getLenWid();
+		document.write("<h1> by setter and getter area of Triangle is : " + triangle.area() + "</h1>");
+
+	</script>
+</body>
+</html>

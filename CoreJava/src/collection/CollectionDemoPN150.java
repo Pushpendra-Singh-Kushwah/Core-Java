@@ -16,14 +16,14 @@ public class CollectionDemoPN150 {
 	
 		for (Object object : c) {
 
-			System.out.print(object);
+			System.out.println(object); 
 		}
 		
 		Object arr[] = c.toArray();
 		
 		for (Object object : arr) {
 			String s = (String) object;
-			System.out.print(s);
+			System.out.print("\t"+s);
 			
 		}
 	}
