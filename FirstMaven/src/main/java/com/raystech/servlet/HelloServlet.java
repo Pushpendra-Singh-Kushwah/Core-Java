@@ -1,0 +1,46 @@
+package com.raystech.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({"/hello","/ram","/shyam"})
+public class HelloServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		RegistrationBean bean = new RegistrationBean();
+		bean.setFirstName(request.getParameter("fname"));
+		bean.setLastName(request.getParameter("lname"));
+		bean.setLoginId(request.getParameter("user"));
+		bean.setPwd(request.getParameter("pwd"));
+		bean.setConfirmpwd(request.getParameter("cpwd"));
+		bean.setGender(request.getParameter("gen"));
+		bean.setDob(request.getParameter("dob"));
+		
+//		PrintWriter out = response.getWriter();
+//		out.print("its me");
+		
+		RegistrationModel model = new RegistrationModel();
+		try {
+			model.add(bean);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

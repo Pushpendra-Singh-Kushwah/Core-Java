@@ -9,61 +9,58 @@
 
 </head>
 <body><br>
-
-  <img src="customLogoOuterglow.png" align="right">
-  <a href="">Login</a>
-  <br> <br>
+<%@ include file = "Header.jsp" %>
+  
   <h2>Hi, Guest</h2>
 <br><br>
 
-<p><a href="">Get Marksheet</a> | <a href="">Marksheet Merit List</a> | <a href="">My Profile</a> | <a href="">Change Password</a> | <a href=""></a> | <a href="">Java Doc</a> | <a href="">Add Marksheet</a> | <a href="">Marksheet List</a> | <a href="">Add User</a> | <a href="">User List</a> | <a href="">Add College</a> | <a href="">College List</a> | <a href="">Add Student</a> | <a href="">Student List</a> | <a href="">Add role</a> | <a href="">Role List</a></p>
-<hr size="2", color="Black">
+
 <center>
   <h1>User Registration</h1>
-  <h4>Registration is done</h4>
-  <h4>Login ID already exists</h4>
-
+  
+<form action="HelloServlet" method="get">        
 <table>
     <tr>
     <td>First Name*</td>
-    <td><input type="text" name=""></td>
+    <td><input type="text" name="fname"></td>
     <td style="color: red ;"> First Name is required</td>
   </tr>
   <tr>
     <td>Last Name*</td>
-    <td><input type="text" name=""></td>
+    <td><input type="text" name="lname"></td>
     <td style="color: red ;"> Last Name is required</td>
   </tr>
   <tr>
     <td>Login ID*</td>
-    <td><input type="text" name="" placeholder="Must be Login ID"></td> 
+    <td><input type="text" name="user" placeholder="Must be Login ID"></td> 
     <td style="color: red ;"> Login ID is required</td>
   </tr>
   <tr>
     <td>Password*</td>
-    <td><input type="text" name=""></td> 
+    <td><input type="text" name="pwd"></td> 
     <td style="color: red ;"> Password is required</td>
   </tr>
   <tr>
     <td>Confirm Password*</td>
-    <td><input type="text" name=""></td> 
+    <td><input type="text" name="cpwd"></td> 
     <td style="color: red ;"> Confirm Password is required</td>
   </tr>
   <tr>
     <td>Gender</td>
-      <td><select style="background-color: whitesmoke;"><option>Male</option><option>Female</option></select></td>
+      <td><select style="background-color: whitesmoke;" name="gen"><option value="M">Male</option> <option value="F">Female</option></select> </td>
   </tr>
   <tr>
     <td>Date Of Birth</td>
-    <td><input type="date" name=""></td>
+    <td><input type="date" name="dob"></td>
   </tr>
   <tr>
     <td></td>
-    <td style="text-align: center;"><input type="button" value="SignUp" name="">
+    <td style="text-align: center;"><input type="submit" value="SignUp" name="submit">
   </tr>
 </table>
+</form>
 </center>
-<hr size="2", color="Black">
-<h4 align="center">(c) Copyrights SunilOS Infotech Pvt. Ltd.</h4>
+<br><br><br><br><br>
+<%@ include file = "footer.jsp" %>
 </body>
 </html>

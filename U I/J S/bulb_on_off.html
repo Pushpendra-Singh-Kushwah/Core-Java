@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>On Off bulb</title>
+	<script type="text/javascript">
+		function changeImage(){
+			document.getElementById("light").src="onbulb.png";
+			document.getElementById("back").style.backgroundColor="blue"
+		}
+		function getOriginal(){
+			document.getElementById("light").src="off_bulb.jpeg";
+			document.getElementById("back").style.backgroundColor="green"
+		}
+	</script>
+</head>
+<body id="back" style="background-color: green;">
+	<img src="off_bulb.jpeg" id="light" width="200px" >
+	<button onclick="changeImage()">Change Image</button>
+	<button onclick="getOriginal()">Original Image</button>
+
+
+</body>
+</html>

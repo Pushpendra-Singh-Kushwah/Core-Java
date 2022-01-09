@@ -46,8 +46,7 @@ public class JdbcDataSource {
 			return null;
 		}
 	}
-	public static void closeConnection(
-		Connection conn, Statement stmt, ResultSet rs) {
+	public static void closeConnection(Connection conn, Statement stmt, ResultSet rs) {
 		try {
 			if(rs !=null) rs.close();
 			if(stmt!=null) stmt.close();
