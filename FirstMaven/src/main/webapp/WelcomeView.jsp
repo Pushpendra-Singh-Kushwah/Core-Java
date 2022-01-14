@@ -15,7 +15,10 @@
 </h2>
 
 <h1 style="color: blue" align="center">Welcome</h1>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
+<a href="GetCokiesCtrl">cokies</a>
+<br><br><br><br><br><br>
+
 
 </form>
 	<%@ include file = "footer.jsp" %>

@@ -7,6 +7,12 @@
 <title>Header</title>
 </head>
 <body>
+<%String login= (String) session.getAttribute("use");
+String fname= (String) session.getAttribute("fn");
+if (login!=null){%>
+<%=login%>
+<%=fname %>
+<%} %>
 <br>
 
 	<img src="customLogoOuterglow.png" align="right">
@@ -27,7 +33,8 @@ if(block!=null){%>
 			List</a> | <a href="">Add User</a> | <a href="">User List</a> | <a
 			href="">Add College</a> | <a href="">College List</a> | <a href="">Add
 			Student</a> | <a href="">Student List</a> | <a href="">Add role</a> | <a
-			href="">Role List</a>
+			href="">Role List</a> | <a href="">Add role</a> | <a
+			href="LogoutView.jsp">Log out</a>
 	</p>
 	<hr size="2" , color="Black">
 	<%} %>

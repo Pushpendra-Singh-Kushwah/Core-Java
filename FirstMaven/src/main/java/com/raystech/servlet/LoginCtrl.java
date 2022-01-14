@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "LoginCtrl", urlPatterns = "/LoginCtrl")
 public class LoginCtrl extends HttpServlet {
@@ -28,6 +30,9 @@ public class LoginCtrl extends HttpServlet {
 		RegistrationBean bean = new RegistrationBean();
 		bean.setLoginId(request.getParameter("user"));
 		bean.setPwd(request.getParameter("pwd"));
+		
+		String us = request.getParameter("user");
+		String pw = request.getParameter("pwd");
 		
 		if (bean.getLoginId()=="") {
 			RequestDispatcher rd = request.getRequestDispatcher("LoginView.jsp");
@@ -49,7 +54,24 @@ public class LoginCtrl extends HttpServlet {
 					RequestDispatcher rd = request.getRequestDispatcher("WelcomeView.jsp");
 					request.setAttribute("Welcome", "swaagat hai");
 					request.setAttribute("fName", bean.getFirstName());
+					// this is for cookie(first we define here, then in getcookiectrl)
+					Cookie ck1 = new Cookie("us", us );
+					ck1.setMaxAge(24*60*60*7);
+					response.addCookie(ck1);
+					
+					Cookie ck2 = new Cookie("pw", pw );
+					ck2.setMaxAge(24*60*60*7);
+					response.addCookie(ck2);
+					// this is for session (code begun)
+					HttpSession session = request.getSession();
+					session.setAttribute("use", us);
+					session.setAttribute("fn", bean.getFirstName());
+					
+					//  this is for session (code end)
 					rd.forward(request, response);
+					
+					
+					
 				}
 					
 			} catch (SQLException e) {

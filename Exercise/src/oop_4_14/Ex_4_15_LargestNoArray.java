@@ -3,9 +3,9 @@ package oop_4_14;
 public class Ex_4_15_LargestNoArray {
 	public static void main(String[] args) {
 		
-		int [] abc = {10,20,100,40,50};
+		int [] abc = {10,20,100,140,50};
 		
-		int max = abc[0];
+		int max = 0;
 		
 		for (int i = 0; i < abc.length; i++) {
 			

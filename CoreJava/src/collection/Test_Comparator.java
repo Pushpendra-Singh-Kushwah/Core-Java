@@ -9,7 +9,7 @@ public class Test_Comparator implements Comparator<Marksheet_222>{
 		if (o1.getName()!=o2.getName()) {
 			return o1.getName().compareTo(o2.getName());
 		} else {
-				return o1.getPhysics().compareTo(o2.getPhysics());
+				return o1.getRollNo().compareTo(o2.getRollNo());
 		} 
 	}
 }

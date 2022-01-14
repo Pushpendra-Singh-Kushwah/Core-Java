@@ -61,6 +61,6 @@ public class Marksheet_222 implements Comparable<Marksheet_222>{
 	}
 	@Override
 	public int compareTo(Marksheet_222 o ) {
-		return this.rollNo.compareTo(o.rollNo);  // method call and return
-	}
+		return this.rollNo.compareTo(o.rollNo);  // method call and return 
+	}												// this is option here
 }

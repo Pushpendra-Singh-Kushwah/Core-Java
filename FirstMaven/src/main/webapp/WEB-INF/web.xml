@@ -10,8 +10,18 @@
 		<description></description>
 		<servlet-class>com.raystech.servlet.ForgetPasswordCtrl</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>GetCokiesCtrl</servlet-name>
+		<display-name>GetCokiesCtrl</display-name>
+		<description></description>
+		<servlet-class>com.raystech.servlet.GetCokiesCtrl</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ForgetPasswordCtrl</servlet-name>
 		<url-pattern>/ForgetPasswordCtrl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetCokiesCtrl</servlet-name>
+		<url-pattern>/GetCokiesCtrl</url-pattern>
 	</servlet-mapping>
 </web-app>

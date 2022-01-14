@@ -17,7 +17,7 @@
 
 	<% String error = (String) request.getAttribute("wrong");
 	if(error!=null){%>
-	<h2 align="center" style="color:blue">wrong entry</h2>
+	<h2 align="center" style="color:red"> You have entered wrong loginID and Password</h2>
 	<%  }%>
 	
 			<table>
@@ -25,21 +25,18 @@
 					<td>Login ID*</td>
 					<td><input type="text" name="user" placeholder="Login ID"
 						size="25px"></td>
-					<td style="color: red;">Login ID is required
+					<td style="color: red;">
 					
-					<% String err = (String) request.getAttribute("wrong");
-					String psw = (String) request.getAttribute("log");
-	if(err!=null){%>
-	<h2 align="center" style="color:blue">login id is invalid</h2>
-	<%= err %>
-	<% } %>
+					
+	<h2 align="center" style="color:blue"></h2>
+	
 					</td> 
 				</tr>
 				<tr>
 					<td>Password*</td>
 					<td><input type="text" name="pwd" placeholder="password"
 						size="25px"></td>
-					<td style="color: red;">Password is required</td>
+					<td style="color: red;"></td>
 				</tr>
 
 				<tr>
