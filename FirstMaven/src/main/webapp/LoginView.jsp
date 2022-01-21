@@ -14,7 +14,14 @@
 		<h1>Login</h1>
 		<!-- <h2 style="color: red;">Invalid Id and Password</h2> -->
 <form action="LoginCtrl" method="post">
+<!-- this is for front controller -->
+<%String sessionEx = (String) request.getAttribute("sessionEx"); 
+if(sessionEx!=null){%>
+<h2 style="color: red">
+<%=sessionEx %></h2>
+<%} %>
 
+<!-- this is for wrong password enter -->
 	<% String error = (String) request.getAttribute("wrong");
 	if(error!=null){%>
 	<h2 align="center" style="color:red"> You have entered wrong loginID and Password</h2>

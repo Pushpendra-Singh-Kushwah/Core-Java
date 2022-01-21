@@ -9,6 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 
 public class TestUser {
 	public static void main(String[] args) {
@@ -16,9 +19,45 @@ public class TestUser {
 		// update();
 		// delete();
 		// select(); // in this select method we use criteria, in hibernate criteria is used in place of select query, 
-		//printSingleAttribute();
-		printMultipleAttribute();
+		// printSingleAttribute();
+		// printMultipleAttribute();
+		 getparts_Restrictions();
+		// SelectedAttribute_Projection();
+		
 	}
+	private static void SelectedAttribute_Projection() {
+		SessionFactory sessionfactory = new Configuration().configure().buildSessionFactory();
+		Session s = sessionfactory.openSession();
+		Criteria criteria = s.createCriteria(User.class);
+		ProjectionList p = Projections.projectionList();
+		p.add(Projections.property("id"));
+		//p.add(Projections.property("fName"));
+		
+		criteria.setProjection(p);
+        List list = criteria.list();
+        
+        System.out.println(list);
+		}
+	
+	private static void getparts_Restrictions() {
+		SessionFactory sessionfactory = new Configuration().configure().buildSessionFactory();
+		Session s = sessionfactory.openSession();
+		Criteria criteria = s.createCriteria(User.class);
+		// criteria.add(Restrictions.like("lName","S%"));
+		 // criteria.add(Restrictions.eq("pwd", "2020")); 
+		criteria.add(Restrictions.gt("id", 2));    // check this also
+		 List<User> list = criteria.list();          
+		
+		for (User u: list) {
+			System.out.println(u.getId());
+			System.out.println(u.getfName());
+			System.out.println(u.getlName());
+			System.out.println(u.getUserId());
+			System.out.println(u.getPwd());
+		}
+			
+		}
+
 
 	private static void printMultipleAttribute() {
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();

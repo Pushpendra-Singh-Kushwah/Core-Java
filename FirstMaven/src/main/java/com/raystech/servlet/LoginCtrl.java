@@ -52,7 +52,6 @@ public class LoginCtrl extends HttpServlet {
 					rd.forward(request, response);
 				} else {
 					RequestDispatcher rd = request.getRequestDispatcher("WelcomeView.jsp");
-					request.setAttribute("Welcome", "swaagat hai");
 					request.setAttribute("fName", bean.getFirstName());
 					// this is for cookie(first we define here, then in getcookiectrl)
 					Cookie ck1 = new Cookie("us", us );
@@ -64,7 +63,6 @@ public class LoginCtrl extends HttpServlet {
 					response.addCookie(ck2);
 					// this is for session (code begun)
 					HttpSession session = request.getSession();
-					session.setAttribute("use", us);
 					session.setAttribute("fn", bean.getFirstName());
 					
 					//  this is for session (code end)

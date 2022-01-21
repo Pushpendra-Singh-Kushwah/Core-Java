@@ -20,6 +20,8 @@
 <input type="submit" value="Add" Name="operation">
 <input type="submit" value="Delete" Name="operation">
 <input type="submit" value="Modify" Name="operation"></td></tr>
+<tr><td></td><td><a href="StudentManagementSearch.jsp">Search</a>
+<a href="StudentManagementGet.jsp">Get</a></td><td></td></tr>
 </table></form>
 </center>
 </body>

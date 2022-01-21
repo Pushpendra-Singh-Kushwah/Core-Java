@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="ForgetPasswordCtrl" method="post">
-<% String pwd = (String) request.getAttribute("pwd"); %>
-<%=pwd%>
+<form action="">
+
 </form>
 </body>
 </html>

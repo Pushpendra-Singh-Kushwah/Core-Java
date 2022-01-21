@@ -18,8 +18,8 @@ private static void testInsert() throws Exception {
 		Class.forName(driver);
 		Connection conn = DriverManager.getConnection(url, password, user);
 	
-		int id =21;
-		String name = "uni";
+		int id =22;
+		String name = "uri";
 		
 		PreparedStatement ps = conn.prepareStatement("INSERT INTO PINTO VALUES (?,?)");
 		

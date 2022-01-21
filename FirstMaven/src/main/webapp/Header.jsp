@@ -7,12 +7,13 @@
 <title>Header</title>
 </head>
 <body>
-<%String login= (String) session.getAttribute("use");
-String fname= (String) session.getAttribute("fn");
-if (login!=null){%>
-<%=login%>
-<%=fname %>
+<%if(session.getAttribute("fn")==null){%>
+<h2>Welcome Guest
+<%}else{ %>
+Welcome
+<%=session.getAttribute("fn") %>
 <%} %>
+</h2>
 <br>
 
 	<img src="customLogoOuterglow.png" align="right">
@@ -23,7 +24,7 @@ if (login!=null){%>
 	<br>
 	
 	
-<hr size="2" , color="Black">
+<hr size="2" color="Black">
 <% String block = (String) request.getAttribute("fName"); 
 if(block!=null){%>
 	<p>
@@ -36,7 +37,7 @@ if(block!=null){%>
 			href="">Role List</a> | <a href="">Add role</a> | <a
 			href="LogoutView.jsp">Log out</a>
 	</p>
-	<hr size="2" , color="Black">
+	<hr size="2" color="Black">
 	<%} %>
 </body>
 </html>

@@ -7,10 +7,6 @@
 <title>Student Ctrl</title>
 </head>
 <body>
-	<%@page import="com.raystech.student.StudentBean"%>
-	<%
-	StudentBean sb = new StudentBean();
 	
-	%>
 </body>
 </html>

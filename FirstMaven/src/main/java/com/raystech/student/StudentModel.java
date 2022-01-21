@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.raystech.servlet.JdbcDataSource;
 
@@ -17,7 +19,7 @@ public class StudentModel {
 		Connection conn = JdbcDataSource.getConnection();
 		conn.setAutoCommit(false);
 		PreparedStatement ps = conn.prepareStatement("INSERT INTO student VALUES (?,?,?,?)");
-		ps.setString(1,bean.getRollNo());
+		ps.setString(1, bean.getRollNo());
 		ps.setString(2, bean.getFirstName());
 		ps.setString(3, bean.getLastName());
 		ps.setString(4, bean.getSession());
@@ -70,29 +72,32 @@ public class StudentModel {
 
 	}
 
-	public void search(StudentBean bean) throws Exception {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/psk","root","root");
-	
+	public List search(StudentBean bean) throws Exception {
+		Connection conn = JdbcDataSource.getConnection();
 		conn.setAutoCommit(false);
-		
+	
 		PreparedStatement ps = conn.prepareStatement("select * from student");
 		ResultSet rs = ps.executeQuery();
 		
 		conn.commit();
-		System.out.println("\t RollNo \t FName \t Lname \t Session");
-		
+		System.out.println("RollNo \t FName \t Lname \t Session");
+		List<StudentBean> list = new ArrayList();
+		StudentBean b1; 
 		while(rs.next()) {
-			System.out.print("\t" + rs.getString(1));
-			System.out.print("\t" +rs.getString(2));
-			System.out.print("\t" +rs.getString(3));
-			System.out.println("\t" +rs.getString(4));
+			b1 = new StudentBean();
+			b1.setRollNo(rs.getString(1));
+			b1.setFirstName(rs.getString(2));
+			b1.setLastName(rs.getString(3));
+			b1.setSession(rs.getString(4));
+			
+			list.add(b1);
 		}
-		rs.close();
-		conn.close();
+		
+		JdbcDataSource.closeConnection(conn, ps, rs);
+		return list;
 	}
 
-	public void get(StudentBean bean) throws Exception {
+	public StudentBean get(StudentBean bean) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/psk","root","root");
 	
@@ -105,13 +110,14 @@ public class StudentModel {
 		conn.commit();
 		System.out.println("\t RollNo \t FName \t Lname \t Session");
 		
-		rs.next();
-		System.out.print("\t" + rs.getString(1));
-		System.out.print("\t" +rs.getString(2));
-		System.out.print("\t" +rs.getString(3));
-		System.out.print("\t" +rs.getString(4));
-		
+		while (rs.next()) {
+		bean.setRollNo(rs.getString(1));
+		bean.setFirstName(rs.getString(2));
+		bean.setLastName(rs.getString(3));
+		bean.setSession(rs.getString(4));
+		}
 		rs.close();
 		conn.close();
+		return bean;
 	}
 }

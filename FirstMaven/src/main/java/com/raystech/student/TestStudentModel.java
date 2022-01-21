@@ -45,7 +45,7 @@ public class TestStudentModel {
 			//testUpdate();
 			//testDelete();
 			//testGet();
-			testSearch();
+			//testSearch();
 			
 		}
 		public static void testSearch() throws Exception {
@@ -53,8 +53,7 @@ public class TestStudentModel {
 			
 			StudentModel sm = new StudentModel();
 			sm.search(bean);
-			
-			
+	
 		}
 		public static void testGet() throws Exception {
 			StudentBean bean = new StudentBean();
